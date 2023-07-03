@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("org.apache.kafka:kafka-streams:3.5.0")
+    implementation("com.nfeld.jsonpathkt:jsonpathkt:2.0.1")
 }
 
 tasks.test {
