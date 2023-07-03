@@ -8,8 +8,6 @@
     },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-  "customizations": {
-  },
   "runArgs": ["--network=host"],
   "postCreateCommand": "curl -sL --http1.1 https://cnfl.io/cli | sh -s -- -b /usr/local/bin latest",
   "remoteUser": "root"
