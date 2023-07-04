@@ -15,7 +15,7 @@ fun getConfig(): Properties{
     val kafkaConfig = File("/home/root/.confluent/config.json").readText(Charsets.UTF_8)
     val props = Properties()
     props["bootstrap.servers"] = "localhost:${JsonPath.parse(kafkaConfig)?.read<String>("$.local_ports.plaintext_port")}"
-    props["application.id"] = "kafka-app4"
+    props["application.id"] = "kafka-app2"
     return props
 }
 

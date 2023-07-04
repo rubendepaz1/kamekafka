@@ -2,15 +2,13 @@
   "name": "kafka-101",
   "version": "1.0.0",
   "scripts": {
-    "start": "fusuma start",
-    "start:prod": "fusuma start-prod",
-    "build": "fusuma build",
-    "deploy": "npm run build && fusuma deploy",
-    "pdf": "npm run build && fusuma pdf"
+    "start": "reveal-md slides/slides.md  -w",
+    "build": "reveal-md slides.md --static _site",
+    "pdf": "reveal-md slides.md --print slides.pdf"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "fusuma": "^2.8.4"
+    "reveal-md": "5.5.0"
   }
 }
