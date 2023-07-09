@@ -24,7 +24,7 @@ fun main() {
     //configure
     val streamsBuilder = StreamsBuilder()
     val quickstart: KStream<String, String> = streamsBuilder
-        .stream("quickstart", Consumed.with(Serdes.String(), Serdes.String()))
+        .stream("kametopic", Consumed.with(Serdes.String(), Serdes.String()))
     //transform
     doStuff(quickstart)
     //consume

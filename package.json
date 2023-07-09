@@ -1,5 +1,5 @@
 {
-  "name": "kafka-101",
+  "name": "kamekafka",
   "version": "1.0.0",
   "scripts": {
     "start": "reveal-md slides/slides.md  -w",

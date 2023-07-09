@@ -1,19 +1,20 @@
 package com.kanekotic.kafkaapp.transformations
 
 import com.kanekotic.kafkaapp.helpers.KafkaUnitTestBase
+import com.kanekotic.kafkaapp.helpers.KafkaUnitTestBaseWithoutFilter
 import org.apache.kafka.streams.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class TransformTest: KafkaUnitTestBase<String, String>({ stream -> filterSalutes(stream)}, String::class.java, String::class.java) {
+class InputOutputTest: KafkaUnitTestBaseWithoutFilter<String, String>(String::class.java, String::class.java) {
 
     @Test
-    fun testFilterSalute() {
+    fun testInputOutput() {
         inputTopic.pipeInput("key1", "Hello")
         inputTopic.pipeInput("key2", "pepepe")
         //inputTopic.pipeInput("key2", "hello world")
-        assertEquals(outputTopic.queueSize, 1)
-        assertEquals(outputTopic.readKeyValuesToList(), listOf(KeyValue("key1", "Hello")))
+        assertEquals(outputTopic.queueSize, 2)
+        assertEquals(outputTopic.readKeyValuesToList(), listOf(KeyValue("key1", "Hello"),KeyValue("key2", "pepepe")))
     }
 
 }
